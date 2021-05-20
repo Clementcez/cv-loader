@@ -1,0 +1,65 @@
+@keyframes letterBug {
+    0% {
+        transform: translate(3px, 2px)
+    }
+    30% {
+        transform: translate(0)
+    }
+    50%{
+        transform: translate(2px, 4px)
+    }
+    70%{
+        transform: translate(3px, 2px)
+    }
+    100% {
+        transform: translate(0)
+    }
+}
+
+@keyframes letterBug2 {
+    0% {
+        transform: translateY(3px, 2px)
+    }
+    30% {
+        transform: translate(0)
+    }
+    50%{
+        transform: translate(2px, 4px)
+    }
+    70%{
+        transform: translate(3px, 2px)
+    }
+    100% {
+        transform: translate(0)
+    }
+}
+
+@keyframes loaderBar {
+    0% {
+        transform: scaleX(0);
+    }
+    17% {
+        transform: scaleX(0.18);
+    }
+    24% {
+        transform: scaleX(0.4);
+    }
+    46% {
+        transform: scaleX(0.58);
+    }
+    66%{
+        transform: scaleX(0.78)
+    }
+    100%{
+        transform: scaleX(1);
+    }
+}
+
+@keyframes loaderSmallBar {
+    0%{
+        transform: scaleX(0)
+    }
+    100%{
+        transform: scaleX(1)
+    }
+}

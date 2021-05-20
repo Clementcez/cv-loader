@@ -1,0 +1,11 @@
+{
+  "name": "cyberloader",
+  "version": "1.0.0",
+  "description": "loader scc",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./css/loader.scss:./css/loader.css"
+  },
+  "author": "clément",
+  "license": "ISC"
+}

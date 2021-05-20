@@ -1,0 +1,310 @@
+@import "./keyFrames.scss";
+@import "./variables.scss";
+
+@mixin redBoxShadow {
+    box-shadow: 0px 0px 15px 1px $primaryColor;
+}
+
+@mixin dotAbsolute {
+    position: absolute;
+    background-color: $secondaryColor;
+    width: $widthDot;
+    height: $widthDot;
+}
+
+html{
+    background-color: $blackgound;
+    font-family: 'Dosis', sans-serif;
+    color: $white;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.loader{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: auto;
+
+    &__score{
+        position: absolute;
+        width: $contenerScore * 1.5;
+        height: $contenerScore;
+        bottom: 6rem;
+
+        >p{
+            position: absolute;
+            margin: unset;
+            color: $primaryColor;
+            font-size: 40px;
+            letter-spacing: 5px;
+            bottom: 18px;
+            left: 30px;
+        }
+
+        &__topLeft{
+            @include dotAbsolute;
+        }
+
+        &__topRight{
+            @include dotAbsolute;
+            right: 0;
+        }
+
+        &__botLeft{
+            @include dotAbsolute;
+            bottom: 0;
+        }
+
+        &__botRight{
+            @include dotAbsolute;
+            right: 0;
+            bottom: 0;
+        }
+    }
+
+    &__squareCorner{
+        position: absolute;
+        width: $contenerSquare;
+        height: $contenerSquare;
+        bottom: 6rem;
+        left: 22rem;
+
+        &--botLeft{
+            bottom: unset;
+            top: 6rem;
+        }
+
+        &--topRight{
+            left: unset;
+            right: 21rem;
+        }
+
+        &--botRight{
+            left: unset;
+            right: 21rem;
+            top: 6rem;
+        }
+
+        &__topDot{
+            @include dotAbsolute;
+
+            &--mod{
+                right: 0px;
+            }
+        }
+
+        &__square{
+            position: absolute;
+            width: $widthDot * 2;
+            height: $widthDot * 2;
+            border: solid $secondaryColor 1px;
+            top: 14px;
+            right: 0;
+
+            &--mod{
+                left: 0;
+            }
+        }
+
+        &__botDot{
+            @include dotAbsolute;
+            bottom: 0;
+
+            &--mod{
+                right: 0px;
+            }
+        }
+    }
+
+    &__tRevert{
+        position: relative;
+        display: flex;
+        flex-direction: row-reverse;
+        height: $contenerT;
+        border-right: solid $primaryColor 3px;
+        right: 3rem;
+
+        &--mod{
+            flex-direction: row;
+            border-right: none;
+            border-left: solid $primaryColor 3px;
+            right: unset;
+            left: 3rem;
+        }
+
+        &__large{
+            position: relative;
+            width: $contenerT * 2;
+            bottom: $contenerT / 2 + 1px;
+            border-bottom: dotted $primaryColor 1px;
+        }
+
+        &__medium{
+            position: relative;
+            width: $contenerT;
+            bottom: $contenerT / 2;
+            border-bottom: solid $primaryColor 3px;
+        }
+
+        &__small{
+            position: relative;
+            width: $contenerT / 2;
+            bottom: $contenerT / 2;
+            border-bottom: solid $primaryColor 3px;
+        }
+    }
+    
+    &__plusUnderlineDotted{
+        position: relative;
+        right: 2%;
+        top: 10px;
+        height: $contenerPlus + $widthDot * 4;
+
+        &--mod{
+            left: 2%;
+        }
+
+        &__plus{
+            position: relative;
+            width: $contenerPlus;
+            height: $contenerPlus;
+            border-top: solid $white 1px;
+            border-bottom: solid $white 3px;
+
+            &__x{
+                position: absolute;
+                width: $contenerPlus / 2;
+                height: $contenerPlus / 2;
+                bottom: $contenerPlus / 2;
+                left: $contenerPlus / 4;
+                border-bottom: solid $white 1px;
+            }
+
+            &__y{
+                position: absolute;
+                width: $contenerPlus / 2;
+                height: $contenerPlus / 2;
+                left: $contenerPlus / 2;
+                top: $contenerPlus / 4;
+                border-left: solid $white 1px;
+            }
+        }
+
+        &__dot{
+            position: absolute;
+            background-color: $white;
+            width: $widthDot;
+            height: $widthDot;
+            right: 0;
+            bottom: 0;
+        }
+
+        &__dot--mod{
+            left: 0;
+        }
+    }
+
+    &__text{
+        position: absolute;
+        left: 20.8rem;
+        bottom: 1rem;
+        font-size: x-large;
+        letter-spacing: 5px;
+
+        &>span{
+            display: inline-block;
+        }
+
+        &__L{
+            
+            animation: letterBug 0.4s 3 alternate;
+        }
+
+        &__O{
+            animation: letterBug2 0.5s 5 alternate;
+        }
+
+        &__D{
+            animation: letterBug 0.2s 2 alternate;
+        }
+
+        &__G{
+            animation: letterBug2 0.3s 4 alternate;
+        }
+
+        &__number{
+            font-size: 10px;
+            margin-left: 19rem;
+        }
+    }
+
+    &__bar{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 50%;
+
+        &__big{
+            background-color: $primaryColor;
+            width: 90%;
+            height: 1rem;
+            @include redBoxShadow;
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: loaderBar $animDuration both;
+        }
+
+        &__small{
+            background-color: $primaryColor;
+            width: 5%;
+            height: 1rem;
+            @include redBoxShadow;
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: loaderSmallBar $animDurationSmallBar $animDelaySmallBar both linear;
+        }
+    }
+
+    &__subLoader{
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        top: 4rem;
+
+        &>p{
+            color: $primaryColor;
+            font-size: 10px;
+            letter-spacing: 2px;
+            margin: unset;
+        }
+
+        &__big{
+            background-color: $secondaryColor;
+            width: 10rem;
+            height: 2px;
+            margin: 10px;
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: loaderBar $animDuration both;
+        }
+
+        &__small{
+            background-color: $secondaryColor;
+            width: 10px;
+            height: 2px;
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: loaderSmallBar $animDurationSmallBar $animDelaySmallBar both linear;
+        }
+    }
+}

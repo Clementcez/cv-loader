@@ -253,7 +253,7 @@ body {
 }
 .loader__text {
   position: absolute;
-  left: 20.8rem;
+  left: 30%;
   bottom: 1rem;
   font-size: x-large;
   letter-spacing: 5px;
@@ -449,6 +449,12 @@ body {
     right: 95%;
     left: unset;
     top: 9rem;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .loader__text__number{
+    margin-left: 10rem;
   }
 }
 
